@@ -1,0 +1,294 @@
+.instructor-progress-page {
+  padding: 2rem;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+.progress-header {
+  margin-bottom: 2rem;
+}
+
+.progress-header h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+}
+
+.progress-header .course-name {
+  color: #7f8c8d;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.error-message {
+  background-color: #fee;
+  color: #c33;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #c33;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.1rem;
+  color: #7f8c8d;
+}
+
+.progress-container {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.no-students {
+  padding: 3rem;
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+/* Progress Table Styles */
+.progress-table {
+  width: 100%;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 200px 250px 150px 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #ecf0f1;
+  border-bottom: 2px solid #bdc3c7;
+  font-weight: bold;
+  color: #2c3e50;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.table-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 200px 250px 150px 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid #ecf0f1;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.table-row:hover {
+  background-color: #f9f9f9;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.header-cell,
+.cell {
+  padding: 0.5rem;
+}
+
+.cell.student-name {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.cell.email {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+}
+
+/* Progress Bar */
+.progress-bar-container {
+  width: 100%;
+  height: 24px;
+  background-color: #ecf0f1;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #3498db, #2980b9);
+  transition: width 0.3s ease;
+  border-radius: 12px;
+}
+
+.progress-text {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Lesson Details */
+.lesson-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.lesson-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #2c3e50;
+}
+
+.lesson-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.lesson-status.completed {
+  color: #27ae60;
+}
+
+.lesson-status.pending {
+  color: #95a5a6;
+}
+
+.lesson-name {
+  flex: 1;
+  color: #34495e;
+}
+
+.no-lessons {
+  color: #95a5a6;
+  font-style: italic;
+}
+
+/* Summary Section */
+.progress-summary {
+  margin-top: 2rem;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-summary h3 {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.summary-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f5f7fa;
+  border-radius: 0.5rem;
+  border-left: 4px solid #3498db;
+}
+
+.stat-label {
+  color: #7f8c8d;
+  font-weight: 600;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3498db;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .table-header,
+  .table-row {
+    grid-template-columns: 150px 200px 120px 1fr;
+  }
+
+  .header-cell,
+  .cell {
+    padding: 0.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .progress-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .progress-container {
+    overflow-x: auto;
+  }
+
+  .table-header,
+  .table-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .table-header {
+    display: none;
+  }
+
+  .table-row {
+    display: block;
+    border-bottom: 2px solid #ecf0f1;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #f9f9f9;
+  }
+
+  .cell {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ecf0f1;
+  }
+
+  .cell::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #7f8c8d;
+  }
+
+  .cell.student-name::before {
+    content: "Name:";
+  }
+
+  .cell.email::before {
+    content: "Email:";
+  }
+
+  .cell.progress::before {
+    content: "Progress:";
+  }
+
+  .cell.lessons::before {
+    content: "Lessons:";
+  }
+
+  .summary-stats {
+    grid-template-columns: 1fr;
+  }
+}
